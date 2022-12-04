@@ -44,5 +44,24 @@ app.*.map.json
 /android/app/release
 
 # Assets folder is too big to be included
-assets/Icons
-assets/Temtem
+
+assets/Temtem/*
+
+!assets/Temtem/
+!assets/Temtem/Portraits/
+assets/Temtem/Portraits/Eggs/
+assets/Temtem/Portraits/Regular/*.png
+!assets/Temtem/Portraits/Regular/small/*
+assets/Temtem/Portraits/Luma/*.png
+!assets/Temtem/Portraits/Luma/small/*
+!assets/Temtem/Stickers/
+assets/Temtem/Stickers/*.png
+!assets/Temtem/Stickers/small/*
+!assets/Temtem/Renders/
+assets/Temtem/Renders/Animated/
+!assets/Temtem/Renders/Static/
+
+
+assets/Icons/*
+!assets/Icons/Types/
+!assets/Icons/Techniques/

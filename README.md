@@ -11,7 +11,6 @@ This app is a fan-made project that aims to provide a comprehensive and up-to-da
 
 This app is a community-driven project, and I welcome contributions from other Temtem fans. If you have information or updates to share, please open a pull request.
 
-The assets used for the app are too large to be uploaded on GitHub, and must be downloaded separately from the official release.
 
 ## Acknowledgements
 This app would not have been possible without the following projects:
