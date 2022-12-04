@@ -1,0 +1,69 @@
+name: temtem_wiki
+description: A new Flutter project.
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  fl_chart: ^0.55.1
+  flutter_riverpod: ^2.1.1
+  http: ^0.13.5
+  flutter_staggered_grid_view: ^0.6.2
+  fluttertoast: ^8.0.9
+  animated_theme_switcher: ^2.0.6
+  adaptive_theme: ^3.1.1
+  cool_dropdown: ^1.4.2
+  dropdown_button2: ^1.8.1
+  palette_generator: ^0.3.3+2
+  animations: ^2.0.4
+  expandable: ^5.0.1
+  window_manager: ^0.2.7
+  table_sticky_headers: ^2.0.5
+  shared_preferences: ^2.0.15
+  shared_preferences_riverpod: ^0.3.0
+  get_storage: ^2.0.3
+  flutter_launcher_icons: ^0.11.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/Temtem/Portraits/Regular/small/
+    - assets/Temtem/Portraits/Luma/small/
+    - assets/Temtem/Stickers/small/
+    - assets/Temtem/Renders/Static/
+    - assets/Icons/Types/
+    - assets/Icons/Techniques/
+
+  fonts:
+    - family: VictorMono
+      fonts:
+        - asset: fonts/VictorMono-Regular.ttf
+          style: normal
+        - asset: fonts/VictorMono-SemiBold.ttf
+          weight: 600
+        - asset: fonts/VictorMono-Bold.ttf
+          weight: 900
+    - family: Temfont
+      fonts:
+        - asset: fonts/Temfont-Regular.ttf
+          style: normal
