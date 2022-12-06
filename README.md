@@ -1,5 +1,11 @@
 # Temdex
 
+<img
+  src="app_preview.jpg"
+  alt="Alt text"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto; height: 390px">
+
 This app is a fan-made project that aims to provide a comprehensive and up-to-date encyclopedia for the massively multiplayer creature-collecting game Temtem.
 
 ## Features
