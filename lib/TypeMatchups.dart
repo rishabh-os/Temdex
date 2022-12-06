@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_sticky_headers/table_sticky_headers.dart';
-import 'package:temtem_wiki/Data/TypeData.dart';
+import 'package:temdex/Data/TypeData.dart';
 import 'dart:math';
 
 class TypeMatchup extends StatelessWidget {

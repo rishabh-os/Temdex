@@ -1,9 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:temtem_wiki/Data/TemtemData.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
-import 'package:temtem_wiki/Temdex/TemtemCard.dart';
+import 'package:temdex/Data/TemtemData.dart';
+import 'package:temdex/Data/data_provider.dart';
+import 'package:temdex/Temdex/TemtemCard.dart';
 
 class SearchAllFAB extends StatelessWidget {
   const SearchAllFAB({Key? key}) : super(key: key);

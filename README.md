@@ -1,4 +1,4 @@
-# Temtem Wiki App
+# Temdex
 
 This app is a fan-made project that aims to provide a comprehensive and up-to-date encyclopedia for the massively multiplayer creature-collecting game Temtem.
 

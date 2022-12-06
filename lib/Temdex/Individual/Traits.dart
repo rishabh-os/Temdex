@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:temtem_wiki/Data/TraitData.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
+import 'package:temdex/Data/TraitData.dart';
+import 'package:temdex/Data/data_provider.dart';
 
 class TemtemTraits extends StatelessWidget {
   const TemtemTraits({Key? key, required this.traits}) : super(key: key);

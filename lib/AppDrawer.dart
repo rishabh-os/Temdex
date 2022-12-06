@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
-import 'package:temtem_wiki/Settings.dart';
-import 'package:temtem_wiki/TypeMatchups.dart';
+import 'package:temdex/Data/data_provider.dart';
+import 'package:temdex/Settings.dart';
+import 'package:temdex/TypeMatchups.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({

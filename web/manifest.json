@@ -1,6 +1,6 @@
 {
-    "name": "temtem_wiki",
-    "short_name": "temtem_wiki",
+    "name": "temdex",
+    "short_name": "temdex",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

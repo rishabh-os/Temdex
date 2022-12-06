@@ -1,4 +1,4 @@
-package com.example.temtem_wiki
+package com.example.temdex
 
 import io.flutter.embedding.android.FlutterActivity
 

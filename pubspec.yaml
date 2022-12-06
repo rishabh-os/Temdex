@@ -1,5 +1,5 @@
-name: temtem_wiki
-description: A new Flutter project.
+name: temdex
+description: This app is a fan-made project that aims to provide a comprehensive and up-to-date encyclopedia for the massively multiplayer creature-collecting game Temtem.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 

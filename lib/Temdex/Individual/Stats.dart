@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temtem_wiki/Data/TemtemData.dart';
+import 'package:temdex/Data/TemtemData.dart';
 
 class TemtemStats extends StatefulWidget {
   const TemtemStats({Key? key, required this.stats}) : super(key: key);

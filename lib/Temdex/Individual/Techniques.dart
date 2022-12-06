@@ -1,9 +1,9 @@
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:temtem_wiki/Data/TechniqueData.dart';
-import 'package:temtem_wiki/Data/TemtemData.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
+import 'package:temdex/Data/TechniqueData.dart';
+import 'package:temdex/Data/TemtemData.dart';
+import 'package:temdex/Data/data_provider.dart';
 
 class TemtemTechniques extends StatelessWidget {
   const TemtemTechniques({Key? key, required this.techniques})

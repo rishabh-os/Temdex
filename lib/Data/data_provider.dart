@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart';
-import 'package:temtem_wiki/Data/TechniqueData.dart';
-import 'package:temtem_wiki/Data/TemtemData.dart';
-import 'package:temtem_wiki/Data/TraitData.dart';
+import 'package:temdex/Data/TechniqueData.dart';
+import 'package:temdex/Data/TemtemData.dart';
+import 'package:temdex/Data/TraitData.dart';
 
 class TemtemNotifier extends StateNotifier<List<Temtem>> {
   TemtemNotifier() : super([]);

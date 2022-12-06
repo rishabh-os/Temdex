@@ -2,7 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:temtem_wiki/Temdex/TemList.dart';
+import 'package:temdex/Temdex/TemList.dart';
 import 'package:window_manager/window_manager.dart';
 import 'dart:io' show Platform;
 

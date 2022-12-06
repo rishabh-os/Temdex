@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temtem_wiki/Data/TypeData.dart';
+import 'package:temdex/Data/TypeData.dart';
 
 class TypeMatchup extends StatelessWidget {
   const TypeMatchup({

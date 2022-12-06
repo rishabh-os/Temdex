@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:temtem_wiki/AppDrawer.dart';
-import 'package:temtem_wiki/Temdex/SearchTems.dart';
-import 'package:temtem_wiki/Temdex/TemtemCard.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
+import 'package:temdex/AppDrawer.dart';
+import 'package:temdex/Temdex/SearchTems.dart';
+import 'package:temdex/Temdex/TemtemCard.dart';
+import 'package:temdex/Data/data_provider.dart';
 
 class TemList extends ConsumerStatefulWidget {
   const TemList({Key? key}) : super(key: key);

@@ -3,7 +3,7 @@ import 'package:dropdown_button2/custom_dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
+import 'package:temdex/Data/data_provider.dart';
 
 class Settings extends ConsumerStatefulWidget {
   const Settings({Key? key}) : super(key: key);

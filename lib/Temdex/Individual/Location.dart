@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:temtem_wiki/Data/TemtemData.dart';
+import 'package:temdex/Data/TemtemData.dart';
 
 class Location extends StatelessWidget {
   const Location({

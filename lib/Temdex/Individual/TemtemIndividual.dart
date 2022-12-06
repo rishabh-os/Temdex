@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:temtem_wiki/Temdex/Individual/Info.dart';
-import 'package:temtem_wiki/Temdex/Individual/Location.dart';
-import 'package:temtem_wiki/Temdex/Individual/Stats.dart';
-import 'package:temtem_wiki/Temdex/Individual/Techniques.dart';
-import 'package:temtem_wiki/Temdex/Individual/Traits.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
-import 'package:temtem_wiki/Temdex/Individual/TypeMatchup.dart';
+import 'package:temdex/Temdex/Individual/Info.dart';
+import 'package:temdex/Temdex/Individual/Location.dart';
+import 'package:temdex/Temdex/Individual/Stats.dart';
+import 'package:temdex/Temdex/Individual/Techniques.dart';
+import 'package:temdex/Temdex/Individual/Traits.dart';
+import 'package:temdex/Data/data_provider.dart';
+import 'package:temdex/Temdex/Individual/TypeMatchup.dart';
 
 class TemtemIndividual extends ConsumerStatefulWidget {
   const TemtemIndividual(

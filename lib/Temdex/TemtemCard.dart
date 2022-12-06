@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:palette_generator/palette_generator.dart';
-import 'package:temtem_wiki/Data/data_provider.dart';
-import 'package:temtem_wiki/Temdex/Individual/TemtemIndividual.dart';
+import 'package:temdex/Data/data_provider.dart';
+import 'package:temdex/Temdex/Individual/TemtemIndividual.dart';
 
 class TemtemCard extends ConsumerStatefulWidget {
   const TemtemCard({
