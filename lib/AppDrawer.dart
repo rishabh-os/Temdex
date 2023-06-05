@@ -25,8 +25,8 @@ class _AppDrawerState extends State<AppDrawer> {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: Column(children: [
+    return NavigationDrawer(
+      children: [
         DrawerHeader(child: Container()),
         Consumer(
           builder: (context, ref, child) => ListTile(
@@ -39,11 +39,11 @@ class _AppDrawerState extends State<AppDrawer> {
                       horizontal: 16.0, vertical: 10.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25.0),
-                    color: Colors.greenAccent,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       Icon(Icons.check),
                       SizedBox(
                         width: 12.0,
@@ -63,6 +63,9 @@ class _AppDrawerState extends State<AppDrawer> {
             },
           ),
         ),
+        // const NavigationDrawerDestination(
+        //     icon: Icon(Icons.pivot_table_chart_outlined),
+        //     label: Text("Type Matchups")),
         ListTile(
           leading: const Icon(Icons.pivot_table_chart_outlined),
           title: const Text("Type Matchups"),
@@ -87,7 +90,7 @@ class _AppDrawerState extends State<AppDrawer> {
             );
           },
         ),
-      ]),
+      ],
     );
   }
 }

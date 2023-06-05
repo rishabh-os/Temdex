@@ -56,11 +56,11 @@ class _TemtemStatsState extends State<TemtemStats> {
                                     const BorderRadius.all(Radius.circular(10)),
                                 color: Theme.of(context)
                                     .colorScheme
-                                    .secondaryContainer,
+                                    .primaryContainer,
                               ),
                               child: AnimatedSize(
                                 duration: const Duration(milliseconds: 800),
-                                curve: Curves.easeOutCirc,
+                                curve: Curves.easeInOutCirc,
                                 child: SizedBox(
                                   height: 6,
                                   // ? Normalize the width of the columns, the -96 is because LayoutBuilder doesn't work as a child of Column so it's a manual adjustment
@@ -79,7 +79,7 @@ class _TemtemStatsState extends State<TemtemStats> {
                                 e.value.toString(),
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyText2!
+                                    .bodyMedium!
                                     .copyWith(fontWeight: FontWeight.bold),
                               ),
                             ),

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart';
@@ -81,4 +82,39 @@ final profileImageProvider = StateProvider<String>((ref) {
   }
   String ppvalue = box.read("profiletype");
   return ppvalue;
+});
+
+// ? For some reason this has to be a list and can't be a single variable,
+// ? otherwise I get a type error
+class ColorNotifier extends StateNotifier<List> {
+  ColorNotifier()
+      : super([
+          // ? This is the initial application theme
+          Brightness.dark,
+          Colors.blue
+        ]);
+  Brightness darkMode = Brightness.dark;
+  Color color = Colors.blue;
+
+  void changeColor(Color newColor) {
+    color = newColor;
+    state = [darkMode, color];
+  }
+
+  void toggleColor(Color col) {
+    // ? All this complicated code brought to you by the fact that it has to be a list
+    color = col;
+    state = [darkMode, color];
+  }
+
+  void toggleBrightness() {
+    // ? All this complicated code brought to you by the fact that it has to be a list
+    darkMode =
+        darkMode == Brightness.light ? Brightness.dark : Brightness.light;
+    state = [darkMode, color];
+  }
+}
+
+final colorProvider = StateNotifierProvider<ColorNotifier, List>((ref) {
+  return ColorNotifier();
 });

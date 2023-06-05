@@ -6,31 +6,27 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  fl_chart: ^0.55.1
-  flutter_riverpod: ^2.1.1
-  http: ^0.13.5
+  fl_chart: ^0.62.0
+  flutter_riverpod: ^2.3.6
+  http: ^1.0.0
   flutter_staggered_grid_view: ^0.6.2
-  fluttertoast: ^8.0.9
-  animated_theme_switcher: ^2.0.6
-  adaptive_theme: ^3.1.1
-  cool_dropdown: ^1.4.2
-  dropdown_button2: ^1.8.1
+  fluttertoast: ^8.2.2
   palette_generator: ^0.3.3+2
-  animations: ^2.0.4
+  animations: ^2.0.7
   expandable: ^5.0.1
-  window_manager: ^0.2.7
+  window_manager: ^0.3.4
   table_sticky_headers: ^2.0.5
-  shared_preferences: ^2.0.15
+  shared_preferences: ^2.1.1
   shared_preferences_riverpod: ^0.3.0
-  get_storage: ^2.0.3
-  flutter_launcher_icons: ^0.11.0
+  get_storage: ^2.1.1
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:

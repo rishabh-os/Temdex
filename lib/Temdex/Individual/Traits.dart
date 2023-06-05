@@ -74,11 +74,11 @@ class Traits extends StatelessWidget {
                                   traitName,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline5!
+                                      .headlineSmall!
                                       .copyWith(
                                           color: Theme.of(context)
                                               .colorScheme
-                                              .tertiary),
+                                              .onTertiaryContainer),
                                   textAlign: TextAlign.justify,
                                 ),
                                 const SizedBox(

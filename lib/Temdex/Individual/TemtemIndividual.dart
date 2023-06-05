@@ -28,22 +28,21 @@ class _TemtemIndividualState extends ConsumerState<TemtemIndividual> {
         duration: const Duration(milliseconds: 300), curve: Curves.ease);
   }
 
-  List<BottomNavigationBarItem> navItems = {
-    'Stats': Icons.bar_chart,
-    'Abilities': Icons.lightbulb_rounded,
-    'Misc': Icons.auto_graph,
-  }
-      .entries
-      .map(
-        (
-          e,
-        ) =>
-            (BottomNavigationBarItem(
-          icon: Icon(e.value),
-          label: e.key,
-        )),
-      )
-      .toList();
+  List<NavigationDestination> navDestinations = const [
+    NavigationDestination(
+      icon: Icon(Icons.bar_chart),
+      label: 'Stats',
+    ),
+    NavigationDestination(
+      icon: Icon(Icons.lightbulb_rounded),
+      label: 'Abilities',
+    ),
+    NavigationDestination(
+      // selectedIcon: Icon(Icons.bookmark),
+      icon: Icon(Icons.auto_graph),
+      label: 'Misc',
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     var temtem = ref
@@ -109,31 +108,39 @@ class _TemtemIndividualState extends ConsumerState<TemtemIndividual> {
       abilities,
       locationAndEvolution
     ];
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
-        items: navItems,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        currentIndex: _selectedIndex,
-        fixedColor: Theme.of(context).textTheme.titleLarge!.color,
-        unselectedItemColor:
-            Theme.of(context).textTheme.titleLarge!.color!.withOpacity(0.5),
-        onTap: _onItemTapped,
-      ),
-      appBar: AppBar(
-        title: Text(temtem.name),
-        backgroundColor: widget.color,
-        elevation: 0,
-      ),
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (value) {
-          setState(() {
-            _selectedIndex = value;
-          });
-        },
-        children: widgetOptions,
+
+    return WillPopScope(
+      onWillPop: () async {
+        var a = ref.read(colorProvider.notifier);
+        a.changeColor(Colors.blue);
+        Navigator.pop(context);
+        return true;
+      },
+      child: Scaffold(
+        bottomNavigationBar: NavigationBar(
+          onDestinationSelected: (int index) {
+            setState(() {
+              _selectedIndex = index;
+              _onItemTapped(index);
+            });
+          },
+          selectedIndex: _selectedIndex,
+          destinations: navDestinations,
+        ),
+        appBar: AppBar(
+          title: Text(temtem.name),
+          backgroundColor: widget.color,
+          elevation: 0,
+        ),
+        body: PageView(
+          controller: _pageController,
+          onPageChanged: (value) {
+            setState(() {
+              _selectedIndex = value;
+            });
+          },
+          children: widgetOptions,
+        ),
       ),
     );
   }
@@ -151,14 +158,16 @@ class InfoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color borderColor = Theme.of(context).colorScheme.secondaryContainer;
+    double thickness = 2;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(10)),
           border: Border.all(
-            color: Colors.black38,
-            width: 2,
+            color: borderColor,
+            width: thickness,
             style: BorderStyle.solid,
           ),
         ),
@@ -167,11 +176,11 @@ class InfoSection extends StatelessWidget {
             Center(
                 child: Text(
               sectionTitle,
-              style: Theme.of(context).textTheme.headline5,
+              style: Theme.of(context).textTheme.headlineSmall,
             )),
-            const Divider(
-              thickness: 2,
-              color: Colors.black38,
+            Divider(
+              thickness: thickness,
+              color: borderColor,
             ),
             sectionInfo
           ],

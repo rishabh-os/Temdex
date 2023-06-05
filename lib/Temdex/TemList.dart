@@ -20,12 +20,9 @@ class _TemListState extends ConsumerState<TemList> {
   }
 
   void initData() {
-    var x = ref.read(temtemProvider.notifier);
-    x.getData();
-    var y = ref.read(traitProvider.notifier);
-    y.getData();
-    var z = ref.read(techniqueProvider.notifier);
-    z.getData();
+    ref.read(temtemProvider.notifier).getData();
+    ref.read(traitProvider.notifier).getData();
+    ref.read(techniqueProvider.notifier).getData();
   }
 
   @override
@@ -36,10 +33,10 @@ class _TemListState extends ConsumerState<TemList> {
       floatingActionButton: const SearchAllFAB(),
       resizeToAvoidBottomInset: false,
       body: (x.isEmpty)
-          ? Center(
+          ? const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   SizedBox(
                     height: 50,
                     width: 50,
@@ -55,14 +52,23 @@ class _TemListState extends ConsumerState<TemList> {
                   title: Text('Temdex', textScaleFactor: 1),
                 ),
               ),
-              SliverList(
-                delegate: SliverChildListDelegate.fixed(x
-                    .map((e) => TemtemCard(
-                        temNumber: e.number,
-                        temName: e.name,
-                        temTypes: e.types))
-                    .toList()),
-              ),
+              SliverList.builder(
+                itemCount: x.length,
+                itemBuilder: (context, index) {
+                  var e = x[index];
+                  return TemtemCard(
+                      temNumber: e.number, temName: e.name, temTypes: e.types);
+                },
+              )
+
+              // SliverList(
+              //   delegate: SliverChildListDelegate.fixed(x
+              //       .map((e) => TemtemCard(
+              //           temNumber: e.number,
+              //           temName: e.name,
+              //           temTypes: e.types))
+              //       .toList()),
+              // ),
             ]),
     );
   }

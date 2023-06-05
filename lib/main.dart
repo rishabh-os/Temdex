@@ -1,10 +1,10 @@
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:temdex/Temdex/TemList.dart';
 import 'package:window_manager/window_manager.dart';
 import 'dart:io' show Platform;
+import 'package:temdex/Data/data_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,7 @@ void main() async {
     });
   }
 
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -37,22 +37,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return AdaptiveTheme(
-      light: ThemeData(
-        brightness: Brightness.light,
-      ),
-      dark: ThemeData(
-        brightness: Brightness.dark,
-      ),
-      initial: AdaptiveThemeMode.light,
-      builder: (light, dark) => ProviderScope(
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: light,
-          home: const TemList(),
+    return Consumer(builder: (context, ref, child) {
+      var y = ref.watch(colorProvider);
+      return MaterialApp(
+        // showPerformanceOverlay: true,
+        title: 'Temdex',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(seedColor: y[1], brightness: y[0]),
+          // brightness: y[0],
         ),
-      ),
-    );
+        home: const TemList(),
+      );
+    });
   }
 }

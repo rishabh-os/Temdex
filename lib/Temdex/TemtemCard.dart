@@ -90,6 +90,7 @@ class _TemtemCardState extends ConsumerState<TemtemCard> {
         Text(
           widget.temName!,
           style: const TextStyle(fontSize: 24),
+          overflow: TextOverflow.ellipsis,
         ),
         Row(
           children: widget.temTypes!
@@ -99,7 +100,7 @@ class _TemtemCardState extends ConsumerState<TemtemCard> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
+                              const BorderRadius.all(Radius.circular(30)),
                           border: Border.all(
                             color: Colors.black38,
                             width: 2,
@@ -141,22 +142,21 @@ class _TemtemCardState extends ConsumerState<TemtemCard> {
             style: BorderStyle.solid,
           )),
         ),
-
-        // color: Colors.tealAccent,
         child: Image.asset(
           profileAssetPath,
-          frameBuilder: (BuildContext context, Widget child, int? frame,
-              bool wasSynchronouslyLoaded) {
-            if (wasSynchronouslyLoaded) {
-              return child;
-            }
-            return AnimatedOpacity(
-              opacity: frame == null ? 0 : 1,
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeOut,
-              child: child,
-            );
-          },
+          // ? This causes performance issues
+          // frameBuilder: (BuildContext context, Widget child, int? frame,
+          //     bool wasSynchronouslyLoaded) {
+          //   if (wasSynchronouslyLoaded) {
+          //     return child;
+          //   }
+          //   return AnimatedOpacity(
+          //     opacity: frame == null ? 0 : 1,
+          //     duration: const Duration(milliseconds: 500),
+          //     curve: Curves.easeOut,
+          //     child: child,
+          //   );
+          // },
           gaplessPlayback: true,
           height: 100,
           width: 100,
@@ -168,10 +168,11 @@ class _TemtemCardState extends ConsumerState<TemtemCard> {
         builder:
             (BuildContext context, AsyncSnapshot<PaletteGenerator> snapshot) {
           // * This still has a lot of edge cases so I'm not really sure how to implement something that would work for everything
+          // ? Tried using Material 3 to generate the palettes for each image but I think
+          // ? my implementation is better
           // ? primaryColor is the dominant color in the image
           Color? primaryColor = snapshot.data?.paletteColors[0].color;
-          Color finalColor;
-          finalColor = Theme.of(context).cardColor;
+          Color finalColor = Theme.of(context).cardColor;
           var darkMode = Theme.of(context).brightness == Brightness.dark;
           double lightness = darkMode ? 0.4 : 0.6;
           double saturation = darkMode ? 0.6 : 0.4;
@@ -194,10 +195,11 @@ class _TemtemCardState extends ConsumerState<TemtemCard> {
             color: finalColor,
             clipBehavior: Clip.antiAlias,
             shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(20))),
+                borderRadius: BorderRadius.all(Radius.circular(30))),
             elevation: 0,
             child: InkWell(
               onTap: () {
+                ref.read(colorProvider.notifier).changeColor(finalColor);
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => TemtemIndividual(

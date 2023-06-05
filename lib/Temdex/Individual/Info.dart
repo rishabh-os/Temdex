@@ -42,7 +42,7 @@ class TemtemInfo extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: Column(
-        children: [
+        children: <Widget>[
           Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
             child: FaintBorderContainer(
@@ -58,66 +58,72 @@ class TemtemInfo extends StatelessWidget {
               childAspectRatio: 2.5,
               children: [
                 [
-                  const Icon(Icons.expand_rounded),
+                  Icon(Icons.expand_rounded,
+                      color: Theme.of(context).colorScheme.tertiary),
                   Text("$meters m ($feet' $inches\")"),
                   Text("Height",
                       style: Theme.of(context)
                           .textTheme
-                          .caption!
+                          .bodySmall!
                           .copyWith(fontSize: 14))
                 ],
                 [
-                  const Icon(
+                  Icon(
                     Icons.scale_rounded,
+                    color: Theme.of(context).colorScheme.tertiary,
                   ),
                   Text(
                       "${details?.weight?.kg} kg (${details?.weight?.lbs} lbs)"),
                   Text("Weight",
                       style: Theme.of(context)
                           .textTheme
-                          .caption!
+                          .bodySmall!
                           .copyWith(fontSize: 14))
                 ],
                 [
-                  const Icon(Icons.safety_divider_rounded),
+                  Icon(Icons.safety_divider_rounded,
+                      color: Theme.of(context).colorScheme.tertiary),
                   Text("${genderRatio.male}:${genderRatio.female}"),
                   Text("Gender Ratio",
                       style: Theme.of(context)
                           .textTheme
-                          .caption!
+                          .bodySmall!
                           .copyWith(fontSize: 14))
                 ],
                 [
-                  const Icon(
+                  Icon(
                     Icons.catching_pokemon_rounded,
+                    color: Theme.of(context).colorScheme.tertiary,
                   ),
                   Text("$catchRate"),
                   Text("Catch Rate",
                       style: Theme.of(context)
                           .textTheme
-                          .caption!
+                          .bodySmall!
                           .copyWith(fontSize: 14))
                 ],
                 [
-                  const Icon(
+                  Icon(
                     Icons.timer,
+                    color: Theme.of(context).colorScheme.tertiary,
                   ),
                   Text("$hatchMins min"),
                   Text("Hatch Timer",
                       style: Theme.of(context)
                           .textTheme
-                          .caption!
+                          .bodySmall!
                           .copyWith(fontSize: 14))
                 ],
                 [
-                  const Icon(
+                  Icon(
                     Icons.upcoming_rounded,
+                    color: Theme.of(context).colorScheme.tertiary,
                   ),
                   Text(tvString),
                   Text("TV Yield",
                       style: Theme.of(context)
                           .textTheme
-                          .caption!
+                          .bodySmall!
                           .copyWith(fontSize: 14))
                 ]
               ]
@@ -158,7 +164,7 @@ class FaintBorderContainer extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         border: Border.all(
-          color: Colors.black12,
+          color: Theme.of(context).colorScheme.secondaryContainer,
           width: 2,
           style: BorderStyle.solid,
         ),

@@ -19,7 +19,7 @@ class TemtemTechniques extends StatelessWidget {
                 border: TableBorder(
                     verticalInside: BorderSide(
                         width: 1,
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).colorScheme.secondaryContainer,
                         style: BorderStyle.solid)),
                 children: [
                   TableRow(
@@ -68,7 +68,7 @@ class TemtemTechniques extends StatelessWidget {
             border: TableBorder(
                 verticalInside: BorderSide(
                     width: 1,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).colorScheme.secondaryContainer,
                     style: BorderStyle.solid)),
             children: [
               TableRow(
@@ -143,8 +143,11 @@ class TechniqueDetails extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(width: 3, color: Colors.grey)),
+          borderRadius: BorderRadius.circular(20),
+          // border: Border.all(
+          //     width: 2,
+          //     color: Theme.of(context).colorScheme.tertiaryContainer)
+        ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(
@@ -152,9 +155,10 @@ class TechniqueDetails extends StatelessWidget {
               children: [
                 Row(
                   children: {
-                    "ATK: ${tech.damage}": Colors.red[700],
+                    "ATK: ${tech.damage}":
+                        Theme.of(context).colorScheme.errorContainer,
                     "STA: ${tech.staminaCost}": Colors.green,
-                    "HOLD: ${tech.hold}": Colors.grey[700],
+                    "HOLD: ${tech.hold}": Theme.of(context).colorScheme.outline,
                   }
                       .entries
                       .map((e) => Expanded(
@@ -228,7 +232,11 @@ class TechniqueDetails extends StatelessWidget {
                 Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50.0),
-                        border: Border.all(width: 2, color: Colors.deepPurple)),
+                        border: Border.all(
+                            width: 2,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .secondaryContainer)),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 4, horizontal: 10),
