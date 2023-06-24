@@ -31,4 +31,4 @@ jobs:
         with:
           artifacts: "build/app/outputs/flutter-apk/*.apk,build/ios/iphoneos/app.ipa"
           tag: v0.2.0
-          token: ${{ secrets.TOKEN }}
+          # token: ${{ secrets.TOKEN }}
